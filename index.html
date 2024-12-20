@@ -1,13 +1,134 @@
-<!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8">
-    <link href="Logo.svg" rel="icon" />
+<!DOCTYPE html>
+<html lang=zh-CN>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="shortcut icon " type="images/x-icon" href="//Crychic.vip/Logo.svg">
+
     <title>Crychic - BanG Dream! It's MyGO!!!!!</title>
-  </head>
-  <body>
-    <p>なんで春日影やったの?!!</p>
-    <p>正在搭建中...    B站<a href="https://space.bilibili.com/435502585">@Tomoriゞ</a></p>
-    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=2149887904&auto=1&height=66"></iframe>
-  </body>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            color: #fff;
+            background: #fff;
+        }
+
+        .background-blur {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background-image: url('https://blog.miomoe.cn/ShuShuicu/body-bg.webp');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .logo {
+            text-align: center;
+            background: url(//Crychic.vip/Logo.svg) no-repeat top center;
+            background-size: 100%;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        a {
+            background-color: #03a9f4;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        a:hover {
+            background-color: #2196f3;
+        }
+
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            a {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-blur"></div>
+    <div class="logo"></div>
+    <h1>なんで春日影やったの?!!</h1>
+    <p>即将跳转到 <strong id="backurl">哔哩哔哩</strong></p>
+    <a id="backhref" href="https://space.bilibili.com/435502585">( <span id="countdown">0</span>秒 ) 立即跳转</a>
+    <script type="text/javascript">
+        // 获取页面中显示倒计时秒数的元素
+        const countdownEl = document.getElementById('countdown');
+        const backurlEl = document.getElementById('backurl');
+        const backhrefEl = document.getElementById('backhref');
+
+        // 直接设置目标URL
+        let backurl = 'https://space.bilibili.com/435502585';
+
+        backurlEl.innerHTML = backurl;
+        backhrefEl.href = backurl;
+
+        console.log(backurl)
+
+        // 定义倒计时秒数
+        let countdown = 5;
+
+        // 更新页面中的倒计时秒数
+        countdownEl.innerHTML = countdown;
+
+        // 定义倒计时函数
+        const countdownFunc = () => {
+            countdown--;
+            countdownEl.innerHTML = countdown;
+
+            if (countdown === 0) {
+                // 倒计时结束后跳转至目标网址
+
+                window.location.href = backurl;
+
+            } else {
+                // 继续倒计时
+                setTimeout(countdownFunc, 1000);
+            }
+        };
+
+        // 开始倒计时
+        setTimeout(countdownFunc, 1000);
+    </script>
+</body>
+
 </html>
